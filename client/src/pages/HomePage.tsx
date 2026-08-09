@@ -34,17 +34,20 @@ export default function HomePage() {
       {/* Visible to everyone */}
       <HeroSection />
       <AboutSection />
-      <AchievementsSection />
+      <CounselorCTA onOpenCall={() => setShowCallPopup(true)} />
       <CoursesSection />
+      <AchievementsSection />
+      
       <QuotesSection />
       <MentorsSection onReachMentors={handleReachMentors} />
 
       {/* Content below Mentors — GATED */}
       {user ? (
         <>
+          
+          <CounselorCTA onOpenCall={() => setShowCallPopup(true)} />
           <StudentLifeSection />
           <EventsGallery />
-          <CounselorCTA onOpenCall={() => setShowCallPopup(true)} />
           <HiringStatsSection />
           <Footer />
         </>
